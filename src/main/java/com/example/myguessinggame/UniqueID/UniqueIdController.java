@@ -11,7 +11,7 @@ public class UniqueIdController {
     @Autowired
     private UniqueIdService uniqueIdService;
 
-    @GetMapping("/uniqueID")
+    @GetMapping("/start")
     public String showID(){
         return uniqueIdService.getId().toString();
     }
