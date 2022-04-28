@@ -11,6 +11,9 @@ public class RandomNumberService {
 
     private Integer number;
 
+    /**
+     *
+     */
     public RandomNumberService() {
         Random random = new Random();
         this.number = random.nextInt(100)+1;

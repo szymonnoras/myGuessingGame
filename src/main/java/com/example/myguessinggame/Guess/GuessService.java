@@ -6,15 +6,16 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.Random;
 
 @Data
 @Service
-public class GuessService {
+public class GuessService implements Serializable {
 
-    RandomNumberService randomNumberService;
-    UniqueIdService uniqueIdService;
-    Integer counter = 0;
+    private RandomNumberService randomNumberService;
+    private UniqueIdService uniqueIdService;
+    private Integer counter = 0;
 
     public GuessService() {
         this.randomNumberService = new RandomNumberService();
@@ -24,5 +25,9 @@ public class GuessService {
     public boolean startGame(){
         //have to create some kind of interface to get feedback from player.
         return false;
+    }
+
+    public void saveScoreToFile(){
+
     }
 }
