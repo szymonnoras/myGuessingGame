@@ -39,10 +39,10 @@ class UniqueIdControllerTest {
 
     /**
      * @throws Exception
-     * test checks if endpoint returns UUID as a string which matches UUID regex.
+     * test checks if endpoint returns string which matches UUID pattern
      */
     @Test
-    void showID() throws Exception{
+    public void showID() throws Exception{
         this.mockMvc
                 .perform(get("/start"))
                 .andDo(print())
