@@ -9,7 +9,7 @@ import java.util.UUID;
 @Service
 @Data
 public class UniqueIdService {
-    private UUID id;
+    private final UUID id;
 
     public UniqueIdService() {
         this.id = UUID.randomUUID();
