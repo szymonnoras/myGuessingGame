@@ -11,7 +11,7 @@ after that you can access 3 endpoints:
 
 http://localhost:8080/start - in which you will get unique id of your session
 
-http://localhost:8080/highscore - in which you will get top 10 scores
+http://localhost:8080/highscores - in which you will get top 10 scores
 
-http://localhost:8080/guess/{number} - in which you can try and guess the number, you need to put your guess after http://localhost:8080/guess/
+http://localhost:8080/guess/{number} - in which you can try and guess the number, you need to replace "{number}" with your guess.
                                        If you will succed, your score will be written to file with all scores.
