@@ -47,6 +47,6 @@ class UniqueIdControllerTest {
                 .perform(get("/start"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(matchesRegex("[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}")));
+                .andExpect(content().string(matchesRegex("\"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\"")));
     }
 }

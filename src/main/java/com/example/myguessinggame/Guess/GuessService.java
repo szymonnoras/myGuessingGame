@@ -74,7 +74,7 @@ public class GuessService implements Serializable {
         List<String[]> dataToParse=getData();
         List<HighScore> highScores=new ArrayList<>();
         for (String[] row : dataToParse) {
-            highScores.add(new HighScore(row[2], Integer.parseInt(row[0]), Long.parseLong(row[1])));
+            highScores.add(new HighScore(row[2], Integer.parseInt(row[0]), Long.parseLong(row[1])*1_000_000_000));
         }
         return highScores;
     }
@@ -92,10 +92,10 @@ public class GuessService implements Serializable {
 
     public List<HighScore> removeWorstScore(List<HighScore> scores){
         int index=0;
-        int min=100;
+        int max=0;
         for (int i=0; i<scores.size(); i++) {
-            if(min>scores.get(i).getTries()){
-                min=scores.get(i).getTries();
+            if(max<scores.get(i).getTries()){
+                max=scores.get(i).getTries();
                 index=i;
             }
         }
@@ -107,7 +107,7 @@ public class GuessService implements Serializable {
         HighScore temp;
         for (int i = 0; i < list.size()-1; i++) {
             for (int j = 0; j < list.size()-1; j++) {
-                if(list.get(j).getTries()<list.get(j+1).getTries()){
+                if(list.get(j).getTries()>list.get(j+1).getTries()){
                     temp=list.get(j);
                     list.set(j,list.get(j+1));
                     list.set(j+1,temp);

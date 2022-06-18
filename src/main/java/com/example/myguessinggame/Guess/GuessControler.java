@@ -30,12 +30,6 @@ public class GuessControler {
         return response;
     }
 
-    @GetMapping("/guess")
-    public GuessService test(){
-        return guessService;
-    }
-
-
    @GetMapping("/highscores")
     public List<HighScore> highScores(){
         return guessService.getTop10Scores();
